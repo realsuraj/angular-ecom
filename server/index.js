@@ -160,3 +160,21 @@ app.post('/addProductImage', upload.single('file'), (req, res, next) => {
         else console.log(err)
     })
   })
+
+
+  app.post('/shop-cart-view',(req,res) => {
+      mysqlConnection.query('SELECT * from user_cart WHERE username = ?',
+      [req.body.username],
+      (err,row,field) => {
+          if(!err){
+              if(row.length > 0)
+              {
+                  console.log("inside shop cart" + row.product_name)
+                  res.send(row)
+              }
+              else{
+                  res.send({message: 'user not found'})
+              }
+          }
+      })
+  })

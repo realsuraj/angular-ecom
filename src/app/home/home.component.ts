@@ -13,9 +13,15 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router, private dataStored: UserService) { }
 
   data: any;
+  username:any;
   image_location = 'http://localhost:3000/uploads/ProductImage_';
 
  ngOnInit() {
+
+  //getting username from localstorage
+  this.username = sessionStorage.getItem('username')
+
+  //getting products form server
    this.http.get('http://localhost:3000/products').subscribe(
      (res) => {
        console.log(res)
@@ -33,6 +39,8 @@ export class HomeComponent implements OnInit {
     this.dataStored.setData('product_discount',this.data[i].product_discount)
     this.dataStored.setData('product_image_location',this.data[i].product_image_location)
   }
+
+  
 
   
 }
