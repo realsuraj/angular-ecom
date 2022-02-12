@@ -1,0 +1,24 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+
+        <h1> Login </h1>
+      <h2 class="active" style="color: red;"> {{message}}</h2>
+        <br>
+      <!-- Tabs Titles -->
+      <h2 class="active"> Sign In </h2>
+      <h2 class="inactive underlineHover" [routerLink]="['/register']">Sign Up </h2>
+  
+      <!-- Icon -->
+    
+  
+      <!-- Login Form -->
+      <form  (ngSubmit)="login(loginForm.value)" #loginForm="ngForm">
+        <input type="text" id="login" class="fadeIn second" name="username" placeholder="login" ngModel>
+        <input type="text" id="password" class="fadeIn third" name="password" placeholder="password" ngModel>
+        <input type="submit" class="fadeIn fourth" value="login">
+      </form>
+  
+     
+  
+    </div>
+  </div>

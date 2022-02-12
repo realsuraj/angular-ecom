@@ -1,0 +1,41 @@
+<header>
+    
+      <title>
+        HOME
+      </title>
+    
+  </header>
+  <body>
+    <a> <p [routerLink]="['/login']"> login </p></a>
+    <a> <p [routerLink]="['/register']"> Register </p></a>
+    <a> <p [routerLink]="['/adminlogin']"> adminLogin </p></a>
+    <a> <p [routerLink]="['/admin-dashboard']"> admin dashboard </p></a>
+    
+  
+  
+    <div>
+      <label> product name   </label>
+      <label> product price  </label>
+      <label> product descript</label>
+      <label> product discount </label>
+      <label> product image </label>
+    </div>
+  
+    <div  *ngFor='let data of data; let i = index;' (click) = "Product_view(i)" >
+        <label  > {{data.product_name}} </label>
+        <label > {{data.product_price}} {{data.empLastName}} </label>
+        <label > {{data.product_description}} </label>
+        <label > {{data.product_discount}}  </label>
+        <img src="{{image_location}}{{data.product_image_location}}" height="100" width="100">
+      </div>
+  
+    </body>
+  
+  
+  
+  
+  
+  
+  
+  
+  
