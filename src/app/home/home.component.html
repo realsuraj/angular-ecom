@@ -6,38 +6,125 @@
      
   </header>
     <!-- nav bar  -->
-   
+  <!-- Navbar -->
+  <div class="sidebar-nav">
+
+    <div class="navbar navbar-light bg-white fixed-top">
+
+        <div class="container">
+
+            <!-- Mobile Menu Toggle Button -->
+
+            <button class="navbar-toggler"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+
+                <span class="navbar-toggler-icon" style="color: black;" ></span>
+
+            </button>
+
+
+
+            <!-- Menus List -->
+
+            <div class="bg-light offcanvas offcanvas-start shadow" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+              <div class="offcanvas-body">
+
+                    <ul class="navbar-nav">
+
+                        <li><a href="#" [routerLink]="['/login']"> <span class="item-text "> login </span></a></li>
+
+                        <li><a href="#" [routerLink]="['/register']"><span class="item-text">Register</span></a></li>
+
+                        <li><a href="#" [routerLink]="['/adminlogin']"><span class="item-text">admin Login</span></a></li>
+
+                        <li><a href="#" [routerLink]="['/admin-dashboard']"> <span class="item-text">admin dashboard</span></a></li>
+
+                        <li><hr class="dropdown-divider"></li>
+
+                        <li><a href="#" [routerLink]="['/shop-cart']"><span class="item-text">shop cart</span></a></li>
+
+                        <li><a href="#"><span class="item-text">Share</span></a></li>
+
+                        <li><a href="#"><span class="item-text">Settings</span></a></li>
+
+                    </ul>
+
+              </div>
+
+            </div>
+
+           
+
+           
+
+            <div class="btn-group" >
+             
+
+
+                <a href="#" class="dropdown-toggle text-black text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
+
+                  <span class="lg-text"> cart <i class="fas fa-shopping-cart"> </i></span>
+
+                  
+
+                </a>
+
+                <ul class="bg-light  dropdown-menu dropdown-menu-end">
+                  
+
+                    <li><button class="dropdown-item" type="button">Change Password</button></li>
+
+                    <li><button class="dropdown-item" type="button">Edit Profile</button></li>
+
+                    <li><button class="dropdown-item" type="button">Settings</button></li>
+
+                    <li><hr class="dropdown-divider"></li>
+
+                    <li><button class="dropdown-item" type="button">Sign out</button></li>
+
+                </ul>
+
+            </div>
+
+
+
+        </div>
+
+</div>
+
+
+
     <!-- end of nav bar -->
 
-
-
-  <body>
-    <a> <p [routerLink]="['/login']"> login </p></a>
-    <a> <p [routerLink]="['/register']"> Register </p></a>
-    <a> <p [routerLink]="['/adminlogin']"> adminLogin </p></a>
-    <a> <p [routerLink]="['/admin-dashboard']"> admin dashboard </p></a>
-    <a> <p [routerLink]="['/shop-cart']"> shop cart </p></a>
+<div class="body bg-light">
+<br><br><br><br>
     
-  
-    <h1> name : {{username}} </h1>
-    <div>
-      <label> product name   </label>
-      <label> product price  </label>
-      <label> product descript</label>
-      <label> product discount </label>
-      <label> product image </label>
-    </div>
-  
-    <div  *ngFor='let data of data; let i = index;' (click) = "Product_view(i)" >
-        <label  > {{data.product_name}} </label>
-        <label > {{data.product_price}} {{data.empLastName}} </label>
-        <label > {{data.product_description}} </label>
-        <label > {{data.product_discount}}  </label>
-        <img src="{{image_location}}{{data.product_image_location}}" height="100" width="100">
+        <!-- card start  -->
+
+ 
+    <div class="container">
+      <div class="row g-2">
+        <ng-container *ngFor='let data of data; let i = index;' >
+          <div class="card col-md-6 col-sm-1 col-lg-3 " (click) = "Product_view(i)">
+            <img src="{{image_location}}{{data.product_image_location}}" height="200" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{data.product_name}}</h5>
+              <p class="card-text">{{data.product_description}}</p>
+              <p class="card-text">{{data.product_name}} price {{data.product_price}}</p>
+              <p class="card-text">{{data.product_discount}}</p>
+            </div>
+          </div>
+        </ng-container>
       </div>
-  
-    </body>
-  
+    </div> 
+
+
+    
+
+      <!-- card end  -->
+   </div>
+     
+  </div>
   
   
   
