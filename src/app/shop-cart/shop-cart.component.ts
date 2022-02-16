@@ -15,13 +15,16 @@ export class ShopCartComponent implements OnInit {
   sendData:any
 
 
+
   ngOnInit(): void {
+    
     this.sendData = {
-      username: this.dataStored.getData('username')
+      username: sessionStorage.getItem('username')
     }
       console.log(this.sendData.username)
     
     this.http.post('http://localhost:3000/shop-cart-view',this.sendData).subscribe((res) => {
+      console.log(res)
       this.data = res;
     })
   }

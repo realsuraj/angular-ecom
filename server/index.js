@@ -151,7 +151,15 @@ app.post('/addProductImage', upload.single('file'), (req, res, next) => {
   })
 
   app.post('/AddCart', (req,res) => {
-    mysqlConnection.query('INSERT into user_cart (username,product) VALUES (?,?)',[req.body.username,req.body.product_name],
+    product_name = req.body.product_name
+    product_price = req.body.product_price
+    product_description = req.body.product_description
+    product_discount = req.body.product_discount
+    product_image_location = req.body.product_image_location
+
+
+    mysqlConnection.query('INSERT into user_cart (username,product_name,product_price,product_description,product_discount,product_image_location) VALUES (?,?,?,?,?,?)',
+    [req.body.username,product_name,product_price,product_description,product_discount,product_image_location],
     (err,row,fields) => {
         if(!err) {
             res.send({message: "insert_successfully"})
@@ -169,12 +177,14 @@ app.post('/addProductImage', upload.single('file'), (req, res, next) => {
           if(!err){
               if(row.length > 0)
               {
-                  console.log("inside shop cart" + row.product_name)
+                  console.log("inside shop cart" + row.product)
                   res.send(row)
               }
               else{
-                  res.send({message: 'user not found'})
+                  res.send({message: 'products not found'})
               }
           }
       })
   })
+
+ 

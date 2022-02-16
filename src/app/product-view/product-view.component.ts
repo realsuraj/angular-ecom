@@ -14,7 +14,7 @@ export class ProductViewComponent implements OnInit {
   constructor(private activeroute: ActivatedRoute, private route: Router, private http: HttpClient, private dataStored: UserService) {}
 
   productData = {
-    username: this.dataStored.getData('username'),
+    username: sessionStorage.getItem('username'),
     product_name: this.dataStored.getData('product_name'),
     product_price: this.dataStored.getData('product_price'),
     product_description: this.dataStored.getData('product_description'),
@@ -32,8 +32,9 @@ export class ProductViewComponent implements OnInit {
   AddCart(){
     
     this.http.post('http://localhost:3000/AddCart',this.productData).subscribe((res) => {
+      console.log('inserting in card')
       console.log(res)
-    })
+    } ,(err) => console.log(err))
   }
 
 }

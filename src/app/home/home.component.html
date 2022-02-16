@@ -57,13 +57,14 @@
 
            
 
-            <div class="btn-group" >
+            <div class="btn-group d-flex" >
              
+                <a href="#" [routerLink]="['/shop-cart']" class="text-black text-decoration-none"> <span class="lg-text me-3">  CART <i class="fas fa-shopping-cart"></i> </span> </a>
 
+                <a href="#" class="text-black text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
 
-                <a href="#" class="dropdown-toggle text-black text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
-
-                  <span class="lg-text"> cart <i class="fas fa-shopping-cart"> </i></span>
+                  <span class="text-uppercase"> {{username}} <i class="fas fa-user-alt"></i> </span>
+                  
 
                   
 
@@ -105,7 +106,7 @@
     <div class="container">
       <div class="row g-2">
         <ng-container *ngFor='let data of data; let i = index;' >
-          <div class="card col-md-6 col-sm-1 col-lg-3 " (click) = "Product_view(i)">
+          <div class="card col-lg-3 col-md-4 col-sm-6  " (click) = "Product_view(i)">
             <img src="{{image_location}}{{data.product_image_location}}" height="200" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{data.product_name}}</h5>

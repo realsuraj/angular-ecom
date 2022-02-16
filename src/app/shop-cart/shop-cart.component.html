@@ -1,5 +1,23 @@
 <div   >
     <h1> working on shop-cart</h1>
-    <!-- <label  > {{data.username}} </label>
-    <label > {{data.product_name}} </label> -->
+
+
+    <div class="container">
+      <div class="row g-2">
+        <ng-container *ngFor='let data of data; ' >
+          <div class="card col-lg-3 col-md-4 col-sm-6  ">
+            <img src='http://localhost:3000/uploads/ProductImage_{{data.product_image_location}}' height="200" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{data.product_name}} {{data.product_image_location}}</h5>
+              <p class="card-text">{{data.product_description}}</p>
+              <p class="card-text">price {{data.product_price}}</p>
+              <p class="card-text">{{data.product_discount}}</p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div> 
+
+
+
   </div>
