@@ -1,17 +1,102 @@
-<div   >
-    <h1> working on shop-cart</h1>
+<div  class="sidebar-nav" >
+    <h1 style="text-align:center; margin: 23px;">  Cart</h1>
 
+
+    <div class="navbar navbar-light bg-white fixed-top">
+
+      <div class="container">
+  
+          <!-- Mobile Menu Toggle Button -->
+  
+          <button class="navbar-toggler"  type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+  
+              <span class="navbar-toggler-icon" style="color: black;" ></span>
+  
+          </button>
+  
+  
+  
+          <!-- Menus List -->
+  
+          <div class="bg-light offcanvas offcanvas-start shadow" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+  
+            <div class="offcanvas-body">
+  
+                  <ul class="navbar-nav">
+  
+                      <li><a href="#" [routerLink]="['/login']"> <span class="item-text "> Login </span></a></li>
+  
+                      <li><a href="#" [routerLink]="['/register']"><span class="item-text">Register</span></a></li>
+  
+                      <li><a href="#" [routerLink]="['/adminlogin']"><span class="item-text">Admin Login</span></a></li>
+  
+  
+  
+                  </ul>
+  
+            </div>
+  
+          </div>
+  
+         
+  
+         
+  
+          <div class="btn-group d-flex" >
+  
+            
+             <input
+              type="search"
+              class="form-control rounded"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="search-addon"
+            >  <span class="input-group-text border-0" id="search-addon" > <i class="fas fa-search"></i>  </span>
+            
+           
+              <a style="margin-left: 30px;" href="#" [routerLink]="['/shop-cart']" class="text-black text-decoration-none"> <span class="lg-text me-3"> <i class="fas fa-shopping-cart"></i> </span> </a>
+  
+              <a href="#" class="text-black text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
+  
+                <span class="text-uppercase"> <i class="fas fa-user-alt"></i> </span>
+                
+  
+                
+  
+              </a>
+  
+              <ul class="bg-light  dropdown-menu dropdown-menu-end">
+              
+  
+                  <li><hr class="dropdown-divider"></li>
+  
+                  <li><button class="dropdown-item" type="button">Sign out</button></li>
+  
+              </ul>
+  
+          </div>
+  
+  
+  
+      </div>
+  
+  </div>
+  
+  <h1 style="text-align: center; margin:23px"> Cart </h1>
+  
 
     <div class="container">
       <div class="row g-2">
         <ng-container *ngFor='let data of data; ' >
-          <div class="card col-lg-3 col-md-4 col-sm-6  ">
-            <img src='http://localhost:3000/uploads/ProductImage_{{data.product_image_location}}' height="200" class="card-img-top" alt="...">
+          <div class="card col-lg-4 col-md-4 col-sm-6  ">
+            <img src='http://localhost:3000/uploads/ProductImage_{{data.product_image_location}}' height="300" alt="...">
             <div class="card-body">
-              <h5 class="card-title">{{data.product_name}} {{data.product_image_location}}</h5>
+              <h1 class="card-title">{{data.product_name}} {{data.product_image_location}}</h1>
+              
+              <h2 class="card-text"> {{data.product_price}} <span class="card-text text-danger" >({{data.product_discount}}% off)</span></h2>
+              
               <p class="card-text">{{data.product_description}}</p>
-              <p class="card-text">price {{data.product_price}}</p>
-              <p class="card-text">{{data.product_discount}}</p>
+              <button type="button" class="btn btn-success">Buy Now</button>
             </div>
           </div>
         </ng-container>

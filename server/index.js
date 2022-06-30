@@ -187,4 +187,24 @@ app.post('/addProductImage', upload.single('file'), (req, res, next) => {
       })
   })
 
+
+  app.post('/admin-hompage', (req,res) => {
+    console.log(req.body.username)
+    product_name = req.body.product_name
+    mysqlConnection.query('SELECT * from products WHERE admin_user = ?',
+    [req.body.username],
+    (err,row,field) => {
+        if(!err){
+            if(row.length > 0)
+            {
+                console.log("inside shop cart" + row.product)
+                res.send(row)
+            }
+            else{
+                res.send({message: 'products not found'})
+            }
+        }
+    })
+  })
+
  

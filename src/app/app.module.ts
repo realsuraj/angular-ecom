@@ -4,12 +4,12 @@ import { HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule, routingComponents} from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    routingComponents,
   ],
   imports: [
     BrowserModule,

@@ -27,13 +27,13 @@ export class AdminLoginComponent implements OnInit {
         console.log(res);
         
         if(responseFromServer.message == "Success_login"){
-          this.router.navigate(['/admin-dashboard'],{queryParams: val.username})
+          this.router.navigate(['/admin-homepage'],{queryParams: val.username})
+          sessionStorage.setItem('adminUsername',val.username)
         }
         else{
           this.message = 'Username or Password Incorrect'
         }
-      },
-           
+      },          
       )
      
   }

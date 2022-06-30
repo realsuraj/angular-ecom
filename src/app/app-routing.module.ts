@@ -8,6 +8,7 @@ import { ProductViewComponent } from './product-view/product-view.component';
 import { RegisterComponent } from './register/register.component';
 import { ShopCartComponent } from './shop-cart/shop-cart.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AdminHomepageComponent } from './admin-homepage/admin-homepage.component'
 
 const routes: Routes = [
   {
@@ -39,6 +40,9 @@ const routes: Routes = [
   {
     path: 'user-profile', component: UserProfileComponent
   },
+  {
+    path: 'admin-homepage', component: AdminHomepageComponent
+  }
 
 ];
 
@@ -47,4 +51,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [AdminDashboardComponent, AdminLoginComponent, HomeComponent , LoginComponent, ProductViewComponent,RegisterComponent, ShopCartComponent, UserProfileComponent]
+export const routingComponents = [AdminDashboardComponent, AdminLoginComponent, HomeComponent , LoginComponent, ProductViewComponent,RegisterComponent, ShopCartComponent, UserProfileComponent,AdminHomepageComponent]

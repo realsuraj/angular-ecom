@@ -1,0 +1,29 @@
+<div   >
+    <h1 style="text-align: center; margin:28px">  Admin DashBoard</h1>
+
+
+    <div class="container">
+      <div class="row g-2">
+        <ng-container *ngFor='let data of data; ' >
+          <div class="card col-lg-4 col-md-4 col-sm-6  ">
+            <img src='http://localhost:3000/uploads/ProductImage_{{data.product_image_location}}' height="300" alt="...">
+            <div class="card-body">
+              <h1 class="card-title">{{data.product_name}} {{data.product_image_location}}</h1>
+              
+              <h2 class="card-text"> {{data.product_price}} <span class="card-text text-danger" >({{data.product_discount}}% off)</span></h2>
+              
+              <p class="card-text">{{data.product_description}}</p>
+              <button type="button" class="btn btn-primary mx-2">Edit</button>
+              <button type="button" class="btn btn-danger">Delete</button>
+
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div> 
+
+
+
+
+  </div>
+
